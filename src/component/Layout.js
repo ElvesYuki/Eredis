@@ -9,16 +9,16 @@ import './Layout.scss'
 const Layout = () => {
   return (
       <>
-          <Row>
-              <Col className="top-tool" span={24}>
+          <Row className="top-tool">
+              <Col span={24}>
                   <TopTool/>
               </Col>
           </Row>
-          <Row>
-              <Col className="key-list">
+          <Row className="button-body">
+              <Col className="key-list" span={9}>
                   <KeyList/>
               </Col>
-              <Col className="value-body">
+              <Col className="value-body" span={15}>
                   <ValueBody/>
               </Col>
           </Row>

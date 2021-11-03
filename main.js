@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain} = require('electron')
 const path = require("path");
+const Store = require("electron-store");
 let mainWindow;
 
 function createWindow() {
@@ -26,6 +27,18 @@ app.whenReady().then(() => {
             loadWindow()
         }
     })
+
+    const store = new Store();
+    store.set('testKey',[1,2,3,4])
+
+    ipcMain.handle('setStoreValue', (event, key ,value) => {
+        return store.set(key, value)
+    })
+
+    ipcMain.handle('getStoreValue',  (event, key) => {
+        return store.get(key)
+    })
+
 })
 
 app.on('window-all-closed', () => {

@@ -1,14 +1,21 @@
 .top-tool{
-  border: black 2px;
-  color: navy;
+  min-height: 8vh;
+  min-width: 100vh;
+  font-size: calc(8px + 1vmin);
+  align-items: center;
+}
+
+.button-body {
+  min-height: 92vh;
+  min-width: 100vh;
 }
 
 .key-list{
-  border: black 2px;
+  border: 1px solid #690080 ;
   color: #690080;
 }
 
 .value-body{
-  border: black 2px;
+  border: 1px solid #0d8000;
   color: #0d8000;
 }
